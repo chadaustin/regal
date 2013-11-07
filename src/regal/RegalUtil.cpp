@@ -59,6 +59,17 @@ using boost::print::string_list;
 #define alloca _alloca
 #endif
 
+static void abort_with_message(const char* x) {
+    fprintf(stderr, "aborting: %s\n", x);
+    abort();
+}
+
+static void abort_with_message(const std::string& s) {
+    abort_with_message(s.c_str());
+}
+
+#define REGAL_ASSERT_FUNCTION(x) abort_with_message(x)
+
 #if REGAL_SYS_WGL
 
 typedef void *HMODULE;
