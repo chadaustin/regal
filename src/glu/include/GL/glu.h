@@ -31,7 +31,7 @@
 #ifndef __glu_h__
 #define __glu_h__
 
-#include <GL/Regal.h>
+#include <SDL/SDL_opengl.h>
 
 #if REGAL_SYS_WGL
 # define REGALGLU_CALL __stdcall
