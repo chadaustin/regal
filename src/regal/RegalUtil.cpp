@@ -60,8 +60,11 @@ using boost::print::string_list;
 #endif
 
 static void abort_with_message(const char* x) {
+    printf("aborting: %s\n", x);
     fprintf(stderr, "aborting: %s\n", x);
-    abort();
+    fflush(stdout);
+    fflush(stderr);
+    //abort();
 }
 
 static void abort_with_message(const std::string& s) {
